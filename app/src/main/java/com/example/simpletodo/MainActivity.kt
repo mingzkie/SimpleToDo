@@ -19,19 +19,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val onLongClickListener = object : TaskItemAdapter.OnLongClickListener {
-            override fun onItemLongClicked(position: Int) {
-                //1. Remove the item from the list
-                listOfTask.removeAt(position)
-
-                //2. Notify the adapter that our data set has changed
-                adapter.notifyDataSetChanged()
-            }
-
-        }
-
-
-
         listOfTask.add("Walk the puppies")
         listOfTask.add("Bath the puppies")
 
@@ -39,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val rvTasks = findViewById<View>(R.id.recyclerview_toDoList) as RecyclerView
 
         //Create adapter passing the fake list 
-        adapter = TaskItemAdapter(listOfTask, onLongClickListener)
+        adapter = TaskItemAdapter(listOfTask)
 
         //Attach the adapter to the recyclerview to populate items
         rvTasks.adapter = adapter
