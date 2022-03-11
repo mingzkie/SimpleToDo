@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+
+
         listOfTask.add("Walk the puppies")
         listOfTask.add("Bath the puppies")
 

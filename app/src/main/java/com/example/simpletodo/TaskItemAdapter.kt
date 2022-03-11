@@ -13,9 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class TaskItemAdapter(val listOfItems: List<String>) : RecyclerView.Adapter<TaskItemAdapter.ViewHolder>() {
 
-    interface OnLongClickListener {
-       fun onItemLongClicked(position: Int)
-    }
+
 
     // Usually involves inflating a layout from XML and returning the holder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -52,6 +50,7 @@ class TaskItemAdapter(val listOfItems: List<String>) : RecyclerView.Adapter<Task
             itemView.setOnLongClickListener {
 
                 Log.i("Dharel", "On LOng CLICK: $absoluteAdapterPosition")
+
                 true
             }
         }
